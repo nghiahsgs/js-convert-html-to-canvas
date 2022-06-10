@@ -47,6 +47,9 @@ js convert html to canvas
 		<button onclick="takeshot()">
 			Take Screenshot
 		</button>
+        <button onclick="takeshot2()">
+			Take Screenshot 2
+		</button>
 	</div>
 	<h1>Screenshot:</h1>
 	<div id="output"></div>
@@ -58,6 +61,20 @@ js convert html to canvas
 		function takeshot() {
 			let div =
 				document.getElementById('photo');
+
+			// Use the html2canvas
+			// function to take a screenshot
+			// and append it
+			// to the output div
+			html2canvas(div).then(
+				function (canvas) {
+					document
+					.getElementById('output')
+					.appendChild(canvas);
+				})
+		}
+        function takeshot2() {
+			let div = document.body
 
 			// Use the html2canvas
 			// function to take a screenshot
